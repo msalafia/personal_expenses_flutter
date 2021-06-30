@@ -24,11 +24,12 @@ class Chart extends StatelessWidget {
           totalSum += recentTransactions[i].amount;
         }
       }
+
       return {
-        'day': DateFormat.E().format(weekDay).substring(0, 1),
+        'day': DateFormat.E().format(weekDay).substring(0, 2),
         'amount': totalSum
       };
-    });
+    }).reversed.toList();
   }
 
   double get totalSpending {
